@@ -27,7 +27,7 @@ public class StudentGUI extends JFrame {
 	private JTable table;
 	private JScrollPane scrollPane = new JScrollPane();
 	private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-	
+
 	private DefaultTableModel tm = new DefaultTableModel(new Object[][] {},
 			new String[] { "Sex", "Age", "Parental Status", "Guardian", "Study Time", "Failures", "Activities",
 					"Romantic Partner", "Free Time", "Daily Alcohol Consumption", "Weekly Alcohol Consumption",
@@ -98,8 +98,7 @@ public class StudentGUI extends JFrame {
 			if ((students.get(i).getSex()) == 'M') {
 				int maleFailures = students.get(i).getFailures();
 				data.setValue("Male", maleFailures);
-			}
-			else if ((students.get(i).getSex()) == 'F') {
+			} else if ((students.get(i).getSex()) == 'F') {
 				int femaleFailures = students.get(i).getFailures();
 				data.setValue("Female", femaleFailures);
 			}

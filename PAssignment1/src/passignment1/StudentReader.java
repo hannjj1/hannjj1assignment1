@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class StudentReader {
 	public StudentReader() {
@@ -46,7 +47,11 @@ public class StudentReader {
 						romanticPartner, freeTime, dailyAlcoholConsumption, weeklyAlcoholConsumption, absences));
 			}
 			in.close();
+//Sort by Age
+			AgeCompare ac = new AgeCompare();
+			Collections.sort(students, ac);
 			System.out.println(students);
+
 		} catch (IOException e) {
 			System.out.println("There was a problem with the file!");
 			e.printStackTrace();
