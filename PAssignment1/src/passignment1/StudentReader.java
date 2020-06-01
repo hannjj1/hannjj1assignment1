@@ -51,6 +51,15 @@ public class StudentReader {
 			AgeCompare ac = new AgeCompare();
 			Collections.sort(students, ac);
 			System.out.println(students);
+			
+//Calculations for weekly average alcohol consumption
+			double average = 0;
+			double total = 0;
+			for (Student item : students) {
+				total = total + item.getWeeklyAlcoholConsumption();
+			}
+			average = total / students.size();
+			System.out.println("Average weekly alcohol consumption: " + average);
 
 		} catch (IOException e) {
 			System.out.println("There was a problem with the file!");

@@ -17,6 +17,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
+import javax.swing.JComboBox;
 
 public class StudentGUI extends JFrame {
 
@@ -40,25 +41,22 @@ public class StudentGUI extends JFrame {
 		super("Student Alcohol Consumption");
 		this.students = students;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 652, 346);
+		setBounds(100, 100, 1000, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(35, 32, 591, 264);
+		tabbedPane.setBounds(10, 11, 964, 489);
 		contentPane.add(tabbedPane);
 
 		JPanel panel = new JPanel();
 		tabbedPane.addTab("All Data", null, panel, null);
 		panel.setLayout(null);
-		JPanel panel2 = new JPanel();
-		tabbedPane.addTab("Pie Graph", null, panel2, null);
-		panel2.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 566, 214);
+		scrollPane.setBounds(10, 11, 939, 219);
 		panel.add(scrollPane);
 
 		table = new JTable();
@@ -68,6 +66,7 @@ public class StudentGUI extends JFrame {
 						"Absences" });
 		table.setModel(tm);
 		scrollPane.setViewportView(table);
+		
 		drawTable();
 		createAPie();
 	}
@@ -107,10 +106,9 @@ public class StudentGUI extends JFrame {
 		JFreeChart chart = ChartFactory.createPieChart("Failed papers per sex", data, true, true, Locale.ENGLISH);
 
 		myChartPanel = new ChartPanel(chart);
-		myChartPanel.setVisible(true);
 		myChartPanel.setBounds(100, 100, 100, 100);
 		tabbedPane.add("Pie Graph", myChartPanel);
 		myChartPanel.setLayout(null);
+		myChartPanel.setVisible(true);
 	}
-
 }
